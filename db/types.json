@@ -1,0 +1,40 @@
+{
+  "types": [
+      {
+        "id": "type0",
+        "category": "category0",
+        "name": "personal",
+        "description": "Fireworks intended for recreational use during holiday celebrations"
+      },
+      {
+        "id": "type1",
+        "category": "category0",
+        "name": "professional",
+        "description": "Fireworks intended for company retreats and small town celebrations"
+      },
+      {
+        "id": "type2",
+        "category": "category0",
+        "name": "disney",
+        "description": "Fireworks intended for the happiest place on earth"
+      },
+      {
+        "id": "type3",
+        "category": "category1",
+        "name": "personal",
+        "description": "Demolition supplies for the casual destruction hobbyist"
+      },
+      {
+        "id": "type4",
+        "category": "category1",
+        "name": "construction",
+        "description": "Demolition supplies for all those big buildings"
+      },
+      {
+        "id": "type5",
+        "category": "category1",
+        "name": "fight club",
+        "description": "Demolition supplies for all the major banks"
+      }
+  ]
+}

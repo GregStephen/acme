@@ -1,0 +1,131 @@
+{
+  "products": [
+    {
+      "whistlin_bungholes": {
+          "id": "product0",
+          "type": "type0",
+          "name": "Whistlin' Bungholes",
+          "description": "Shoots up and whistles."
+      }
+    },{
+      "whistlin_kitty_chaser": {
+          "id": "product1",
+          "type": "type0",
+          "name": "Whistlin' Kitty Chaser",
+          "description": "Multi-colored sparklers that are safe for any age."
+      }
+    },{
+      "whisker_biscuits": {
+          "id": "product2",
+          "type": "type0",
+          "name": "Whisker Biscuits",
+          "description": "A lil biscuit that shoots out black whiskers."
+      }
+    },{
+      "honkey_lighters": {
+          "id": "product3",
+          "type": "type1",
+          "name": "Honkey Lighters",
+          "description": "I legit don't know but it's rad for a town hall meeting."
+      }
+    },{
+      "hoosker_doos": {
+          "id": "product4",
+          "type": "type1",
+          "name": "Hoosker Doos",
+          "description": "When you gotta show up the neighboring town."
+      }
+    },{
+      "hoosker_donts": {
+          "id": "product5",
+          "type": "type1",
+          "name": "Hoosker Dont's",
+          "description": "You shouldn't use these."
+      }
+    },{
+      "cherry_bombs": {
+          "id": "product6",
+          "type": "type2",
+          "name": "cherry_bombs",
+          "description": "Bigger than they sound!"
+      }
+    },{
+      "nipsy_daisers_with_scooter_stick": {
+          "id": "product7",
+          "type": "type2",
+          "name": "Nipsy Daisers with the Scooter Stick",
+          "description": "The stick is a 2x4, blast radius of a half mile."
+      }
+    },{
+      "spleen_splitters": {
+          "id": "product8",
+          "type": "type2",
+          "name": "Spleen Splitters",
+          "description": "So loud it'll split your spleen."
+      }
+    },{
+      "molotov_cocktail": {
+          "id": "product9",
+          "type": "type3",
+          "name": "Molotov Cocktail",
+          "description": "When you want to work on your aim when you destroy."
+      }
+    },{
+      "gallon_jug_of_gasoline": {
+          "id": "product10",
+          "type": "type3",
+          "name": "Gallon Jug of Gasoline",
+          "description": "We suggest shooting a Hoosker Don't at it."
+      }
+    },{
+      "sledge_hammer": {
+          "id": "product11",
+          "type": "type3",
+          "name": "Sledge Hammer",
+          "description": "For when you wanna really get in there."
+      }
+    },{
+      "wrecking_ball": {
+          "id": "product12",
+          "type": "type4",
+          "name": "Wrecking Ball",
+          "description": "Some may have come in like this."
+      }
+    },{
+      "dynamite": {
+          "id": "product13",
+          "type": "type4",
+          "name": "Dynamite",
+          "description": "1 stick. Must have a long grey beard and cowboy hat to use."
+      }
+    },{
+      "c4_explosives": {
+          "id": "product14",
+          "type": "type4",
+          "name": "C4 explosives",
+          "description": "Multi-colored sparklers that are safe for any age."
+      }
+    },{
+      "timer": {
+          "id": "product15",
+          "type": "type5",
+          "name": "Timer",
+          "description": "How else are you gonna blow things up at a safe distance?"
+      }
+    },{
+      "white_van": {
+          "id": "product16",
+          "type": "type5",
+          "name": "White Van",
+          "description": "A great vessle for all your demolition needs"
+      }
+    },{
+      "nitroglycerin": {
+          "id": "product17",
+          "type": "type5",
+          "name": "Nitroglycerin",
+          "description": "Made from all natural sources."
+      }
+    }
+]
+}
