@@ -14,7 +14,6 @@ const typeWithProducts = catWithTypes => new Promise((resolve, reject) => {
         for (let i = 0; i < newerObject.types.length; i += 1) {
           const matchingProds = productValues.filter(prod => prod.type === newerObject.types[i].id);
           newerObject.types[i].products = matchingProds;
-          console.error('newwerObj', newerObject);
         }
         return newerObject;
       });

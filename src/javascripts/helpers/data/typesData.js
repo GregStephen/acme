@@ -4,12 +4,23 @@ const categoryWithType = categories => new Promise((resolve, reject) => {
   axios.get('../db/types.json')
     .then((resp) => {
       const { types } = resp.data;
-      const categoriesWithTypes = categories.map((category) => {
-        const newObject = category;
+      const categoriesWithTypes = [];
+      const style = {};
+      const newObject = Object.create(style);
+      categories.forEach((category) => {
+        console.error('category', category);
         const matchingTypes = types.filter(type => type.category === category.id);
-        newObject.types = matchingTypes;
-        return newObject;
+        matchingTypes.forEach((type) => {
+          console.error('type', type);
+          newObject.categoryId = category.id;
+          newObject.categoryName = category.name;
+          newObject.typeId = type.id;
+          newObject.typeName = type.name;
+          console.error('newObj', newObject);
+          categoriesWithTypes.push(newObject);
+        });
       });
+      console.error('catWIthTypes', categoriesWithTypes);
       resolve(categoriesWithTypes);
     })
     .catch(err => reject(err));
