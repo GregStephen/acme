@@ -47,7 +47,7 @@ const initCategories = () => {
       arrayOfCats = resp.data.categories;
       buttonMaker(resp.data.categories);
     })
-    .catch(err => console.error('error from loadCategories', err));
+    .catch(err => console.error('error from initCategories', err));
 };
 
 const showProducts = (e) => {
@@ -66,7 +66,7 @@ const showProducts = (e) => {
     .then((typeWithProducts) => {
       domStringBuiler(typeWithProducts);
     })
-    .catch(err => console.error('error from initCategories', err));
+    .catch(err => console.error('error from showProducts', err));
 };
 
 const addEventListeners = () => {
