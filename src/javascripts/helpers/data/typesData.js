@@ -5,8 +5,14 @@ const categoryWithType = categories => new Promise((resolve, reject) => {
     .then((resp) => {
       const { types } = resp.data;
       const categoriesWithTypes = [];
-      const style = {};
-      const newObject = Object.create(style);
+      // const style = {
+      //   categoryId: '',
+      //   categoryName: '',
+      //   typeId: '',
+      //   typeName: '',
+      // };
+      console.error('catWIthTypes1', categoriesWithTypes);
+      const newObject = {};
       categories.forEach((category) => {
         console.error('category', category);
         const matchingTypes = types.filter(type => type.category === category.id);
