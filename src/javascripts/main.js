@@ -4,6 +4,7 @@ import products from './components/productsPage';
 
 const init = () => {
   products.initCategories();
+  products.addEventListeners();
 };
 
 init();
