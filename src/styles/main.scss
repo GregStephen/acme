@@ -1,5 +1,38 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./colors";
 
 body {
+  font-family: 'Baloo Bhai', cursive;
   background-color: aliceblue;
+  #header {
+    text-align: center;
+    margin-top: 1em;
+    color: red;
+    text-shadow: 1px 1px 1px black;
+  }
+  #pageTitle {
+    text-align: center;
+    margin-bottom: 2em;
+    h2 {
+      color: silver;
+      text-shadow: 1px 1px 1px black;
+      text-decoration: underline;
+    }
+  }
+}
+#buttonContainer {
+  text-align: end;
+  #dropdownButton {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    button {    
+      box-shadow: 1px 1px 2px black;
+    }
+    .Fireworks {
+      background-color: $fireworks
+    }
+    .Demolition {
+      background-color: $demolition
+    }
+  }
 }

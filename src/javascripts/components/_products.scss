@@ -1,0 +1,63 @@
+@import '../../styles/colors';
+
+#productsPage {
+  margin-bottom: 2em;
+}
+
+.product-card {
+  background-color: slategrey;
+  text-align: center;
+  box-shadow: 5px 5px 10px slategrey;
+  .product-name {
+    color: silver;
+    text-shadow: 1px 1px 1px black;
+  }
+  p {
+    box-shadow: 0px 0px 5px black;
+  }
+  .product-description{
+    background-color: aliceblue;
+    padding: .5em;
+    border-radius: 1%;
+  }
+}
+
+.Fireworks {
+  .card-body {
+    .category-name {
+      background-color: $fireworks;
+    }
+    .type-name {
+      color: black;
+    }
+    .Personal {
+      background-color: green;
+    }
+    .Professional {
+      background-color: yellowgreen;
+    }
+    .Disney {
+      background-color: lightpink;
+    }
+  }
+}
+
+.Demolition {
+  .card-body {
+    .category-name {
+      background-color: $demolition;
+    }
+    .type-name {
+      color: black;
+    }
+    .Personal {
+      background-color: green;
+    }
+    .Construction {
+      background-color: yellowgreen;
+    }
+    .Fight {
+      background-color: red;
+    }
+  }
+}
