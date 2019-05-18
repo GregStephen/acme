@@ -1,42 +1,32 @@
 import categoryData from '../helpers/data/categoriesData';
 import typesData from '../helpers/data/typesData';
-// import productData from '../helpers/data/productsData';
+import productData from '../helpers/data/productsData';
 import util from '../helpers/util';
 
-// const formatInfo = (info) => {
-//   console.error('info coming in', info);
-//   const arrayToPrint = [];
-//   info.forEach((category) => {
-//     // const newFilter = category.filter(aCategory => aCategory.id === aCategory.types[])
-//     const newObject = Object.create(info);
-//     newObject.categoryId = category.id;
-//     newObject.categoryName = category.name;
-//     category.types.forEach((type) => {
-//       newObject.typeId = type.id;
-//     });
-//     // const newObject = {
-//     //   categoryId: '',
-//     //   categoryName: '',
-//     //   typeId: '',
-//     //   typeName: '',
-//     //   productName: '',
-//     //   productDescription: '',
-//     // };
-//     arrayToPrint.push(newObject);
-//   });
-//   console.error('arrayToPrint', arrayToPrint);
-// };
+const domStringBuiler = (arrayOfInfo) => {
+  let domString = '';
+  arrayOfInfo.forEach((product) => {
+    domString += '<div class="col-3 mb-3">';
+    domString += `<div class="card ${product.categoryId} ${product.typeId}">`;
+    domString += '<div class="card-body">';
+    domString += `<h5 class="card-title">${product.productName}</h5>`;
+    domString += `<p class="card-text">Category: ${product.categoryName}</p>`;
+    domString += `<p class="card-text">Type: ${product.typeName}</p>`;
+    domString += `<p class="card-text">Description: ${product.productDescription}</p>`;
+    domString += '</div>';
+    domString += '</div>';
+    domString += '</div>';
+  });
+  util.printToDom('productsPage', domString);
+};
 
 const initCategories = () => {
   categoryData.loadCategories()
     .then(resp => typesData.categoryWithType(resp.data.categories))
-    .then((categoriesWithTypes) => {
-      util.printToDom('productsPage', categoriesWithTypes);
+    .then(categoriesWithTypes => productData.typeWithProducts(categoriesWithTypes))
+    .then((typeWithProducts) => {
+      domStringBuiler(typeWithProducts);
     })
-    // .then(categoriesWithTypes => productData.typeWithProducts(categoriesWithTypes))
-    // .then((typeWithProducts) => {
-    //   console.error(typeWithProducts);
-    // })
     .catch(err => console.error('error from loadCategories', err));
 };
 

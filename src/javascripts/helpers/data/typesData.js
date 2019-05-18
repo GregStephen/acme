@@ -5,28 +5,17 @@ const categoryWithType = categories => new Promise((resolve, reject) => {
     .then((resp) => {
       const { types } = resp.data;
       const categoriesWithTypes = [];
-      // const style = {
-      //   categoryId: '',
-      //   categoryName: '',
-      //   typeId: '',
-      //   typeName: '',
-      // };
-      console.error('catWIthTypes1', categoriesWithTypes);
-      const newObject = {};
       categories.forEach((category) => {
-        console.error('category', category);
         const matchingTypes = types.filter(type => type.category === category.id);
         matchingTypes.forEach((type) => {
-          console.error('type', type);
+          const newObject = {};
           newObject.categoryId = category.id;
           newObject.categoryName = category.name;
           newObject.typeId = type.id;
           newObject.typeName = type.name;
-          console.error('newObj', newObject);
           categoriesWithTypes.push(newObject);
         });
       });
-      console.error('catWIthTypes', categoriesWithTypes);
       resolve(categoriesWithTypes);
     })
     .catch(err => reject(err));

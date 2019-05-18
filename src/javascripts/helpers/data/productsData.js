@@ -9,13 +9,19 @@ const typeWithProducts = catWithTypes => new Promise((resolve, reject) => {
         const newProductValues = Object.values(products[p]);
         productValues.push(newProductValues[0]);
       }
-      const typesWithProducts = catWithTypes.map((cats) => {
-        const newerObject = cats;
-        for (let i = 0; i < newerObject.types.length; i += 1) {
-          const matchingProds = productValues.filter(prod => prod.type === newerObject.types[i].id);
-          newerObject.types[i].products = matchingProds;
-        }
-        return newerObject;
+      const typesWithProducts = [];
+      catWithTypes.forEach((categoryWithType) => {
+        const matchingProds = productValues.filter(prod => prod.type === categoryWithType.typeId);
+        matchingProds.forEach((product) => {
+          const newerObject = {};
+          newerObject.categoryId = categoryWithType.categoryId;
+          newerObject.categoryName = categoryWithType.categoryName;
+          newerObject.typeId = categoryWithType.typeId;
+          newerObject.typeName = categoryWithType.typeName;
+          newerObject.productName = product.name;
+          newerObject.productDescription = product.description;
+          typesWithProducts.push(newerObject);
+        });
       });
       resolve(typesWithProducts);
     })
