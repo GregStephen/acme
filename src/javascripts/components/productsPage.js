@@ -4,6 +4,8 @@ import typesData from '../helpers/data/typesData';
 import productData from '../helpers/data/productsData';
 import util from '../helpers/util';
 
+let arrayOfCats = [];
+
 const buttonMaker = (arrayOfCategories) => {
   let domString = '';
   domString += '<button class="btn btn-secondary dropdown-toggle" type="button"';
@@ -14,6 +16,8 @@ const buttonMaker = (arrayOfCategories) => {
   arrayOfCategories.forEach((category) => {
     domString += `<a class="dropdown-item" id="${category.id}" href="#">${category.name}</a>`;
   });
+  domString += '<div class="dropdown-divider"></div>';
+  domString += '<a class="dropdown-item" id="showAll" href="#">Show All</a>';
   domString += '</div>';
   util.printToDom('dropdownButton', domString);
 };
@@ -21,7 +25,6 @@ const buttonMaker = (arrayOfCategories) => {
 const domStringBuiler = (arrayOfInfo) => {
   let domString = '';
   arrayOfInfo.forEach((product) => {
-    console.error('product', product);
     domString += '<div class="col-3 mb-3">';
     domString += `<div class="card ${product.categoryId} ${product.typeId}">`;
     domString += '<div class="card-body">';
@@ -39,18 +42,24 @@ const domStringBuiler = (arrayOfInfo) => {
 const initCategories = () => {
   categoryData.loadCategories()
     .then((resp) => {
+      arrayOfCats = resp.data.categories;
       buttonMaker(resp.data.categories);
     })
     .catch(err => console.error('error from loadCategories', err));
 };
 
-
 const showProducts = (e) => {
-  const categoryObj = {
-    id: e.target.id,
-    name: e.target.innerText,
-  };
-  typesData.categoryWithType(categoryObj)
+  let categoryArray = [];
+  if (e.target.id === 'showAll') {
+    categoryArray = arrayOfCats;
+  } else {
+    const categoryObj = {
+      id: e.target.id,
+      name: e.target.innerText,
+    };
+    categoryArray.push(categoryObj);
+  }
+  typesData.categoryWithType(categoryArray)
     .then(categoriesWithTypes => productData.typeWithProducts(categoriesWithTypes))
     .then((typeWithProducts) => {
       domStringBuiler(typeWithProducts);
@@ -58,17 +67,8 @@ const showProducts = (e) => {
     .catch(err => console.error('error from initCategories', err));
 };
 
-// const initCategories = () => {
-//   categoryData.loadCategories()
-//     .then(resp => typesData.categoryWithType(resp.data.categories))
-//     .then(categoriesWithTypes => productData.typeWithProducts(categoriesWithTypes))
-//     .then((typeWithProducts) => {
-//       domStringBuiler(typeWithProducts);
-//     })
-//     .catch(err => console.error('error from initCategories', err));
-// };
-
 const addEventListeners = () => {
   $('.dropdown').on('click', '.dropdown-item', showProducts);
 };
+
 export default { initCategories, addEventListeners };
