@@ -20,13 +20,29 @@ body {
     }
   }
 }
+
 #buttonContainer {
-  text-align: end;
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: end;
+  }
   #dropdownButton {
     margin-top: 2em;
     margin-bottom: 2em;
     button {    
+      width: 70%;
+      @media (min-width: 768px) {
+        width: auto;
+      }
       box-shadow: 1px 1px 2px black;
+    }
+    .dropdown-menu {
+      text-align: center;
+      width: 70%;
+      @media (min-width: 768px) {
+        width: auto;
+        text-align: start;
+      }
     }
     .Fireworks {
       background-color: $fireworks
