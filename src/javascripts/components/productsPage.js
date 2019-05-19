@@ -26,14 +26,16 @@ const buttonMaker = (arrayOfCategories) => {
 const domStringBuiler = (arrayOfInfo) => {
   let domString = '';
   arrayOfInfo.forEach((product) => {
-    domString += '<div class="d-md-flex col-12 col-md-6 col-lg-3 mb-3">';
-    domString += `<div class="card align-self-stretch product-card ${product.categoryName} ${product.categoryId} ${product.typeId}">`;
+    domString += '<div class="d-flex align-content-stretch col-10 col-md-6 col-lg-3 mb-3">';
+    domString += `<div class="card align-self-stretch flex-grow-1 product-card ${product.categoryName} ${product.categoryId} ${product.typeId}">`;
     domString += '<div class="card-body">';
     domString += `<h5 class="card-title product-name">${product.productName}</h5>`;
     domString += '<hr>';
-    domString += `<p class="card-text category-name">Category: ${product.categoryName}</p>`;
-    domString += `<p class="card-text type-name ${product.typeName}">Type: ${product.typeName}</p>`;
-    domString += `<p class="card-text product-description">Description: ${product.productDescription}</p>`;
+    domString += '<div class="row justify-content-around">';
+    domString += `<p class="card-text badge badge-pill category-name">${product.categoryName}</p>`;
+    domString += `<p class="badge badge-pill type-name ${product.typeName}">${product.typeName}</p>`;
+    domString += '</div>';
+    domString += `<p class="card-text product-description">${product.productDescription}</p>`;
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
